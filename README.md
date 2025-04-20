@@ -46,10 +46,12 @@ With all the tools it has, Athena is capable of:
 
 ## 🚀 Quick Start
 
+### 方法一：本地安装
+
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Athena-AI-Lab/athena-core.git
+git clone git@github.com:figmar/athena-core.git
 ```
 
 2. [Install pnpm](https://pnpm.io/installation) (if not already installed):
@@ -65,6 +67,34 @@ cd athena-core
 pnpm i
 pnpx playwright install
 ```
+
+### 方法二：Docker 部署
+
+使用 Docker 可以快速部署 Athena，无需关心环境配置：
+
+1. 使用 Docker Compose（推荐）：
+
+```bash
+# 克隆仓库
+git clone https://github.com/Athena-AI-Lab/athena-core.git
+cd athena-core
+
+# 配置文件
+cp configs/config.yaml-example configs/config.yaml
+# 编辑 configs/config.yaml 文件，填入必要的 API 密钥
+
+# 启动服务
+docker-compose up -d
+```
+
+2. 或使用 Docker 脚本：
+
+```bash
+./scripts/build_docker.sh  # 构建镜像
+./scripts/run_docker.sh    # 运行容器
+```
+
+详细的 Docker 部署说明请参考 [Docker 部署指南](docs/docker-deployment.md)。
 
 4. Copy the example config file:
 
@@ -162,7 +192,7 @@ Athena is a community-driven project, and we believe in building great tools _to
 
 ### 💡 Got an Idea?
 
-Open a [GitHub Issue](https://github.com/Athena-AI-Lab/athena-core/issues) and let's discuss it! Whether it's a feature request, a bug report, or a wild idea — we're all ears.
+Contact us through our community channels to discuss your ideas! Whether it's a feature request, a bug report, or a wild idea — we're all ears.
 
 ### 🛠 Want to Contribute Code?
 
